@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vôlei Fofinho - Página Inicial</title>
-  <link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vôlei Brasil - Página Inicial</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-  <header>
-    <h1>Vôlei Fofinho</h1>
-  </header>
-  
-  <nav>
-    <ul>
-      <li><a href="index.html" class="ativo">Início</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-    </ul>
-  </nav>
-  
-  <main>
-    <section id="conteudo-principal">
-      <h2>Bem-vindo ao Mundo do Vôlei Fofo!</h2>
-      <div class="cartoes">
-        <div class="cartao">
-          <img src="https://placekitten.com/300/200" alt="Gatinho jogando vôlei">
-          <h3>Vôlei Feliz</h3>
-          <p>Jogue com alegria e diversão!</p>
+    <header>
+        <div class="logo">
+            <h1>Vôlei<span>Brasil</span></h1>
         </div>
-        <div class="cartao">
-          <img src="https://placekitten.com/300/201" alt="Bolas de vôlei fofas">
-          <h3>Bolas Fofas</h3>
-          <p>As bolas mais fofas do mundo do vôlei!</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <footer>
-    © 2023 Vôlei Fofinho - Todos os direitos reservados
-  </footer>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="ativo">Home</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="regras.html">Regras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="banner-texto">
+                <h2>O esporte da paixão nacional</h2>
+                <p>Conheça tudo sobre o vôlei, seu histórico e regras</p>
+            </div>
+        </section>
+
+        <section class="grid-container">
+            <div class="grid-item">
+                <img src="imagens/volei1.jpg" alt="Jogo de vôlei">
+                <h3>Vôlei de Quadra</h3>
+                <p>O tradicional esporte olímpico que encanta multidões</p>
+                <a href="historia.html" class="btn">Saiba mais</a>
+            </div>
+            
+            <div class="grid-item">
+                <img src="imagens/volei2.jpg" alt="Vôlei de praia">
+                <h3>Vôlei de Praia</h3>
+                <p>A versão descontraída e cheia de emoção</p>
+                <a href="regras.html" class="btn">Saiba mais</a>
+            </div>
+            
+            <div class="grid-item">
+                <img src="imagens/volei3.jpg" alt="Seleção brasileira">
+                <h3>Seleção Brasileira</h3>
+                <p>Uma das maiores potências do vôlei mundial</p>
+                <a href="historia.html#destaques" class="btn">Saiba mais</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VôleiBrasil🏐</p>
+    </footer>
 </body>
 </html>

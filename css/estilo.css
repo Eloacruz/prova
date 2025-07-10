@@ -1,231 +1,234 @@
-/* --------- Cores --------- */
-:root {
-    --rosa-claro: #FFD1DC;
-    --rosa-medio: #FF9EB5;
-    --rosa-escuro: #FF6B8B;
-    --branco: #FFF9FB;
-    --texto: #5A2E3A;
-    --sombra: 0 4px 8px rgba(255, 107, 139, 0.3);
-  }
-  
-  /* --------- Base --------- */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-  }
-  
-  body {
-    background-color: var(--branco);
-    color: var(--texto);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.6;
-  }
-  
-  /* --------- Header --------- */
+/* Reset e estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #1a3e72;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #f9a826;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+nav ul li a:hover, nav ul li a.ativo {
+  background-color: #f9a826;
+  color: #1a3e72;
+}
+
+/* Banner */
+.banner {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../imagens/volei1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.banner-texto h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.banner-texto p {
+  font-size: 1.5rem;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.grid-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.grid-item h3 {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #1a3e72;
+}
+
+.grid-item p {
+  padding: 0 1rem 1rem;
+  color: #666;
+}
+
+.btn {
+  display: inline-block;
+  background: #f9a826;
+  color: #1a3e72;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e6951f;
+}
+
+/* Páginas internas */
+.pagina-interna {
+  padding: 2rem;
+}
+
+.pagina-interna h2 {
+  font-size: 2.5rem;
+  color: #1a3e72;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.conteudo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.info-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.info-box h3 {
+  color: #1a3e72;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.info-box.grande {
+  grid-column: span 2;
+}
+
+/* Footer */
+footer {
+  background: #1a3e72;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   header {
-    background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-escuro));
-    padding: 2rem;
-    text-align: center;
-    box-shadow: var(--sombra);
-    color: white;
-  }
-  
-  header h1 {
-    font-size: 2.8rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    margin-bottom: 0.5rem;
-  }
-  
-  /* --------- Navegação --------- */
-  nav {
-    background-color: var(--rosa-escuro);
-    padding: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+      flex-direction: column;
+      padding: 1rem;
   }
   
   nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    list-style: none;
+      margin-top: 1rem;
   }
   
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    font-size: 1.1rem;
-    background-color: rgba(255,255,255,0.1);
+  .banner-texto h2 {
+      font-size: 2rem;
   }
   
-  nav a:hover, nav a.ativo {
-    background-color: var(--rosa-claro);
-    color: var(--texto);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  .banner-texto p {
+      font-size: 1.2rem;
   }
   
-  /* --------- Conteúdo Principal --------- */
-  main {
-    flex: 1;
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+  .info-box.grande {
+      grid-column: span 1;
   }
-  
-  h2 {
-    color: var(--rosa-escuro);
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 2.2rem;
-    position: relative;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 0.5rem;
-  }
-  
-  h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    width: 50%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--rosa-claro), var(--rosa-escuro));
-  }
-  
-  /* --------- Cartões --------- */
-  .cartoes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-  
-  .cartao {
-    background-color: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--sombra);
-    width: 320px;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  
-  .cartao:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(255, 107, 139, 0.4);
-  }
-  
-  .cartao img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .cartao:hover img {
-    transform: scale(1.05);
-  }
-  
-  .cartao h3 {
-    padding: 1.2rem 1.2rem 0.5rem;
-    color: var(--rosa-escuro);
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  
-  .cartao p {
-    padding: 0 1.2rem 1.5rem;
-    text-align: center;
-    color: var(--texto);
-    font-size: 1.1rem;
-  }
-  
-  /* --------- Sobre --------- */
-  .sobre-conteudo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-  
-  .sobre-conteudo img {
-    border-radius: 20px;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    box-shadow: var(--sombra);
-    transition: transform 0.3s ease;
-  }
-  
-  .sobre-conteudo img:hover {
-    transform: scale(1.02);
-  }
-  
-  .texto-sobre {
-    max-width: 500px;
-  }
-  
-  .texto-sobre p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-  
-  /* --------- Footer --------- */
-  footer {
-    background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-escuro));
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    font-size: 1.1rem;
-  }
-  
-  /* --------- Responsivo --------- */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }
-    
-    nav a {
-      width: 80%;
-      text-align: center;
-    }
-    
-    .sobre-conteudo {
-      flex-direction: column;
-      text-align: center;
-      padding: 0 1rem;
-    }
-    
-    .cartao {
-      width: 100%;
-      max-width: 350px;
-    }
-    
-    header h1 {
-      font-size: 2.2rem;
-    }
-    
-    h2 {
-      font-size: 1.8rem;
-    }
-  }
+}
+/* Estilo do container do vídeo */
+.video-selecao {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.legenda {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
